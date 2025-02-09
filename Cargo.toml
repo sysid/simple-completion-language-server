@@ -15,7 +15,7 @@ citation = ["regex-cursor", "biblatex"]
 anyhow = "1.0"
 ropey = "1.6"
 aho-corasick = "1.1"
-tokio = { version = "1", features = ["rt", "rt-multi-thread", "io-std", "macros"] }
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "io-std", "macros", "time"] }
 tower-lsp = { version = "0.20", features = ["runtime-tokio"] }
 serde = { version = "1", features = ["serde_derive"] }
 serde_json = { version = "1" }
@@ -30,7 +30,12 @@ biblatex = { version = "0.10", optional = true }
 
 tracing = "0.1"
 tracing-subscriber = { version =  "0.3", features = ["env-filter", "fmt"] }
-tracing-appender = "0.2" 
+tracing-appender = "0.2"
 
 [dev-dependencies]
 test-log = { version = "0.2", default-features = false, features = ["trace"] }
+
+
+[[bin]]
+name = "lsp-test"
+path = "src/bin/lsp_test.rs"
